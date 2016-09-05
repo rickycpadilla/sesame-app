@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 var styles = require('./app/config/styles');
 var TestContainer = require('./app/components/TestContainer');
+var MyLocksContainer = require('./app/components/MyLocksContainer');
 
 class SesameApp extends Component {
   render() {
@@ -18,7 +19,7 @@ class SesameApp extends Component {
         style={styles.navigator}
         // DURING DEVELOPMENT - TO TEST ANOTHER SCENE, CHANGE THE COMPONENT BELOW
         // TO THE ONE YOU WANT TO TEST (ie: component: HomeContainer)
-        initialRoute={{component: TestContainer, title: 'Sesame'}}/>
+        initialRoute={{component: MyLocksContainer, title: 'Sesame'}}/>
     );
   }
 }
