@@ -16,17 +16,18 @@ class LockDetails extends Component {
     this.state = { locked: false };
   }
 
-  toggle(){
+  onChange(state) {
     this.setState({
       locked: !this.state.locked
     });
-    log
+    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    console.log(this.state);
   }
 
   render() {
     return (
-      <View style={styles.lockContainer}>
-        <TouchableOpacity onPress={this.toggle}>
+      // <View style={styles.lockContainer} onPress={this.onChange.bind(this)}>
+        <TouchableOpacity style={styles.lockContainer} onPress={this.onChange.bind(this)}>
           <View style={styles.lockImageContainer}>
             <Image
               source={require('../images/WhiteLock.png')}
@@ -39,7 +40,7 @@ class LockDetails extends Component {
             <Text>Unlocked</Text>
           </View>
         </TouchableOpacity>
-      </View>
+      // </View>
     );
   }
 }
