@@ -9,10 +9,9 @@ var styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'center',
         alignItems: 'flex-start',
         padding: 10,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#F1F5F6',
     },
 
     buttonText: {
@@ -39,11 +38,31 @@ var styles = StyleSheet.create({
         borderRadius: 0,
     },
 
-    todo: {
-        marginTop: 100,
-        flex: 1,
+    lockContainer: {
+        flexDirection: 'row',
+        marginTop: 60,
+        // width: 100,
         padding: 10,
         backgroundColor: '#ffffff',
+    },
+
+    lockImageContainer: {
+      backgroundColor: '#4CD964',
+      flex: 1,
+      alignItems: 'center'
+    },
+
+    lockImage: {
+      width: 40,
+      height: 40,
+      marginTop: 20,
+      marginBottom: 20,
+      marginLeft: 50,
+      marginRight: 50,
+    },
+
+    lockDetails: {
+      flex: 1
     },
 
     txt: {
