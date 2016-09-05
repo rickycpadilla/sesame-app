@@ -8,12 +8,34 @@ import {
   TouchableOpacity
 } from 'react-native';
 var styles = require('../config/styles');
+const firebase = require('firebase');
+
+// Initialize Firebase
+const firebaseConfig = {
+  authDomain: "",
+  databaseURL: "https://todo-cc9d9.firebaseio.com/",
+  storageBucket: "",
+};
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+
+
 
 class LockDetails extends Component {
+
+  // Scott's code start
+
+  getRef() {
+    return firebaseApp.database().ref();
+  }
+
+  // Scott's code end
+
 
   constructor(props) {
     super(props);
     this.state = { locked: false };
+    this.itemsRef = this.getRef().child('items');
   }
 
   onChange(state) {
@@ -22,7 +44,11 @@ class LockDetails extends Component {
     });
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     console.log(this.state);
+    this.itemsRef.push(this.state)
+
+
   }
+
 
   render() {
     return (

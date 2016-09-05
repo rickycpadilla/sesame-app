@@ -47,8 +47,9 @@ var styles = StyleSheet.create({
     },
 
     lockImageContainer: {
-      backgroundColor: '#4CD964'
-
+      backgroundColor: '#4CD964',
+      flex: 1,
+      alignItems: 'center'
     },
 
     lockImage: {
@@ -61,7 +62,7 @@ var styles = StyleSheet.create({
     },
 
     lockDetails: {
-
+      flex: 1
     },
 
     txt: {
