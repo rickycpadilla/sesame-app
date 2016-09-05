@@ -41,13 +41,23 @@ var styles = StyleSheet.create({
     lockContainer: {
         flexDirection: 'row',
         marginTop: 60,
-        width: 100,
+        // width: 100,
         padding: 10,
         backgroundColor: '#ffffff',
     },
 
-    lockImage: {
+    lockImageContainer: {
+      backgroundColor: '#4CD964'
 
+    },
+
+    lockImage: {
+      width: 40,
+      height: 40,
+      marginTop: 20,
+      marginBottom: 20,
+      marginLeft: 50,
+      marginRight: 50,
     },
 
     lockDetails: {
