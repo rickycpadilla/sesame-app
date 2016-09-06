@@ -12,6 +12,8 @@ firebase.initializeApp(config);
  var locked = firebase.database().ref('locked');
 
  board.on("ready", function() {
+   var ledGreen = new five.Led(13);
+   var ledRed = new five.Led(12);
    var servo = new five.Servo({
      pin: 10,
      range: [35, 145],
@@ -23,8 +25,12 @@ firebase.initializeApp(config);
      var command = snapshot.val().locked
      if (command == true) {
           servo.min();
+          ledGreen.off();
+          ledRed.on();
      } else {
-          servo.max()
+          servo.max();
+          ledGreen.on();
+          ledRed.off();
      }
    });
 
