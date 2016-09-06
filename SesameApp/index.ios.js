@@ -23,6 +23,6 @@ class SesameApp extends Component {
         initialRoute={{component: SignUp, title: 'Sesame'}}/>
     );
   }
-}
+} 
 
 AppRegistry.registerComponent('SesameApp', () => SesameApp);
