@@ -26,7 +26,7 @@ class LockDetails extends Component {
   // Scott's code start
 
   getRef() {
-    return firebaseApp.database().ref();
+    return firebaseApp.database().ref('locked');
   }
 
   // Scott's code end
@@ -34,18 +34,35 @@ class LockDetails extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { locked: false };
-    this.itemsRef = this.getRef().child('items');
+    this.itemsRef = this.getRef();
+    console.log(this.itemsRef);
+    this.itemsRef.on('value', function(snapshot) {
+            console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+             this.state = {locked: snapshot.val().locked}
+             console.log(snapshot.val().locked);
+        }.bind(this))
+    //this.state = {locked: snapshot.val().locked;
+    //snapshot.val().locked
   }
+
+
+//   componentDidMount(state) {
+//     this.itemsRef.on('value', function(snapshot) {
+//         console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//          this.setState({
+//            locked: snapshot.val().locked
+//          })
+//     })
+// }.bind(this)
+
 
   onChange(state) {
     this.setState({
       locked: !this.state.locked
     });
-    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    console.log(this.state);
-    this.itemsRef.push(this.state)
 
+    //console.log(this.state);
+    this.itemsRef.update(this.state)
 
   }
 

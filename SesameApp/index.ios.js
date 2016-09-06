@@ -22,6 +22,6 @@ class SesameApp extends Component {
         initialRoute={{component: MyLocksContainer, title: 'Sesame'}}/>
     );
   }
-}
+} 
 
 AppRegistry.registerComponent('SesameApp', () => SesameApp);
