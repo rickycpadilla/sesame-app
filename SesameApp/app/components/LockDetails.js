@@ -18,73 +18,52 @@ const firebaseConfig = {
 };
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-
-
-
 class LockDetails extends Component {
-
-  // Scott's code start
 
   getRef() {
     return firebaseApp.database().ref('locked');
   }
 
-  // Scott's code end
-
-
   constructor(props) {
     super(props);
-    this.itemsRef = this.getRef();
-    console.log(this.itemsRef);
-    this.itemsRef.on('value', function(snapshot) {
-            console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-             this.state = {locked: snapshot.val().locked}
-             console.log(snapshot.val().locked);
-        }.bind(this))
-    //this.state = {locked: snapshot.val().locked;
-    //snapshot.val().locked
+    this.state = {locked: undefined};
+    this.state.ready = false;
+    this.getRef().once('value', function(snapshot) {
+      this.state.locked = snapshot.child("locked").val();
+      this.state.ready = true;
+      this.forceUpdate()
+    }.bind(this))
   }
-
-
-//   componentDidMount(state) {
-//     this.itemsRef.on('value', function(snapshot) {
-//         console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-//          this.setState({
-//            locked: snapshot.val().locked
-//          })
-//     })
-// }.bind(this)
 
   onChange(state) {
     this.setState({
       locked: !this.state.locked
+    }, function(){
+      this.getRef().update({locked: this.state.locked})
     });
-
-    //console.log(this.state);
-    this.itemsRef.update(this.state)
-
-
   }
 
-
   render() {
-    return (
-      // <View style={styles.lockContainer} onPress={this.onChange.bind(this)}>
-        <TouchableOpacity style={styles.lockContainer} onPress={this.onChange.bind(this)}>
-          <View style={styles.lockImageContainer}>
-            <Image
-              source={require('../images/WhiteLock.png')}
-              style={styles.lockImage}
-            />
-          </View>
-          <View style={styles.lockDetails}>
-            <Text>Home</Text>
-            <Text>Front Door</Text>
-            <Text>Unlocked</Text>
-          </View>
-        </TouchableOpacity>
-      // </View>
-    );
+    if (!this.state.ready){
+      return null
+    }
+    else {
+      return (
+          <TouchableOpacity style={styles.lockContainer} onPress={this.onChange.bind(this)}>
+            <View style={styles.lockImageContainer}>
+              <Image
+                source={require('../images/WhiteLock.png')}
+                style={styles.lockImage}
+              />
+            </View>
+            <View style={styles.lockDetails}>
+              <Text>Home</Text>
+              <Text>Front Door</Text>
+              <Text>Locked: {this.state.locked ? 'Locked' : 'Unlocked'}</Text>
+            </View>
+          </TouchableOpacity>
+      );
+    }
   }
 }
 
