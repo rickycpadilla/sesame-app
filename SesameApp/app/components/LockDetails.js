@@ -42,9 +42,9 @@ class LockDetails extends Component {
     // To make this not throw errors, comment out the snippet below
     // that is associated with touch ID
     // FROM HERE >>>>>>>
-    PasscodeAuth.authenticate('to access your lock')
-    .then(success => {
-      this.state.locked ?  AlertIOS.alert('Successfully Unlocked') : AlertIOS.alert('Successfully Locked')
+    // PasscodeAuth.authenticate('to access your lock')
+    // .then(success => {
+    //   this.state.locked ?  AlertIOS.alert('Successfully Unlocked') : AlertIOS.alert('Successfully Locked')
       // <<<<<<<< TO HERE
 
       this.setState({
@@ -54,10 +54,10 @@ class LockDetails extends Component {
       });
 
       // AND FROM HERE >>>>>>>
-    })
-    .catch(error => {
-      AlertIOS.alert('Authentication Failed');
-    });
+    // })
+    // .catch(error => {
+    //   AlertIOS.alert('Authentication Failed');
+    // });
     // <<<<<<< TO HERE
   }
 
@@ -68,16 +68,16 @@ class LockDetails extends Component {
     else {
       return (
           <TouchableOpacity style={styles.lockContainer} onPress={this.onChange.bind(this)}>
-            <View style={styles.lockImageContainer}>
+            <View style={this.state.locked ? styles.lockedImageContainer : styles.unlockedImageContainer}>
               <Image
                 source={require('../images/WhiteLock.png')}
-                style={styles.lockImage}
+                style={this.state.locked ? styles.lockImage : styles.unlockImage}
               />
             </View>
             <View style={styles.lockDetails}>
               <Text>Home</Text>
               <Text>Front Door</Text>
-              <Text>Locked: {this.state.locked ? 'Locked' : 'Unlocked'}</Text>
+              <Text>{this.state.locked ? 'Locked' : 'Unlocked'}</Text>
             </View>
           </TouchableOpacity>
       );
