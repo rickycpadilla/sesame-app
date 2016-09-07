@@ -8,18 +8,17 @@ import {
   TouchableOpacity
 } from 'react-native';
 var styles = require('../config/styles');
-const firebase = require('firebase');
+// const firebase = require('firebase');
+//
+// // Initialize Firebase
+// const firebaseConfig = {
+//   authDomain: "",
+//   databaseURL: "https://groceryapp-6b27e.firebaseio.com/",
+//   storageBucket: "",
+// };
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-// Initialize Firebase
-const firebaseConfig = {
-  authDomain: "",
-  databaseURL: "https://todo-cc9d9.firebaseio.com/",
-  storageBucket: "",
-};
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-
-
-
+var firebaseApp = require('firebase');
 
 class LockDetails extends Component {
 
