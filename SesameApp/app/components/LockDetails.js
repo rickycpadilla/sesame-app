@@ -5,12 +5,14 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  AlertIOS
 } from 'react-native';
 var styles = require('../config/styles');
 const firebase = require('firebase');
 
-// Initialize Firebase
+import PasscodeAuth from 'react-native-passcode-auth';
+
 const firebaseConfig = {
   authDomain: "",
   databaseURL: "https://todo-cc9d9.firebaseio.com/",
@@ -36,11 +38,27 @@ class LockDetails extends Component {
   }
 
   onChange(state) {
-    this.setState({
-      locked: !this.state.locked
-    }, function(){
-      this.getRef().update({locked: this.state.locked})
+    // MIKE AND SCOTT:
+    // To make this not throw errors, comment out the snippet below
+    // that is associated with touch ID
+    // FROM HERE >>>>>>>
+    PasscodeAuth.authenticate('to access your lock')
+    .then(success => {
+      this.state.locked ?  AlertIOS.alert('Successfully Unlocked') : AlertIOS.alert('Successfully Locked')
+      // <<<<<<<< TO HERE
+
+      this.setState({
+        locked: !this.state.locked
+      }, function(){
+        this.getRef().update({locked: this.state.locked})
+      });
+
+      // AND FROM HERE >>>>>>>
+    })
+    .catch(error => {
+      AlertIOS.alert('Authentication Failed');
     });
+    // <<<<<<< TO HERE
   }
 
   render() {
