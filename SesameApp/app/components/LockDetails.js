@@ -38,9 +38,9 @@ class LockDetails extends Component {
   }
 
   onChange(state) {
-    // MIKE AND SCOTT:
-    // To make this not throw errors, comment out the snippet below
-    // that is associated with touch ID
+    // GETTING ERRORS?
+    // To make this not throw errors, comment out the 2 snippets below
+    // that are associated with touch ID
     // FROM HERE >>>>>>>
     // PasscodeAuth.authenticate('to access your lock')
     // .then(success => {
