@@ -46,7 +46,13 @@ var styles = StyleSheet.create({
         backgroundColor: '#ffffff',
     },
 
-    lockImageContainer: {
+    lockedImageContainer: {
+      backgroundColor: '#FF2D55',
+      flex: 1,
+      alignItems: 'center'
+    },
+
+    unlockedImageContainer: {
       backgroundColor: '#4CD964',
       flex: 1,
       alignItems: 'center'
@@ -59,10 +65,23 @@ var styles = StyleSheet.create({
       marginBottom: 20,
       marginLeft: 50,
       marginRight: 50,
+      transform: [{rotate: '-90deg'}]
+    },
+
+
+    unlockImage: {
+      width: 40,
+      height: 40,
+      marginTop: 20,
+      marginBottom: 20,
+      marginLeft: 50,
+      marginRight: 50,
     },
 
     lockDetails: {
-      flex: 1
+      flex: 1,
+      marginLeft: 10,
+      marginTop: 15
     },
 
     txt: {
