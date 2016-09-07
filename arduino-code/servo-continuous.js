@@ -9,9 +9,11 @@ var config = {
 
 firebase.initializeApp(config);
  var database = firebase.database();
- var items = firebase.database().ref('items');
+ var locked = firebase.database().ref('locked');
 
  board.on("ready", function() {
+   var ledGreen = new five.Led(13);
+   var ledRed = new five.Led(12);
    var servo = new five.Servo({
      pin: 10,
      range: [35, 145],
@@ -19,14 +21,16 @@ firebase.initializeApp(config);
    }
    );
 
-   items.on('value', function(snapshot) {
-     var arr = Object.keys(snapshot.val())
-     var command = snapshot.val()[arr[arr.length - 1]].locked
-     console.log(command);
+   locked.on('value', function(snapshot) {
+     var command = snapshot.val().locked
      if (command == true) {
           servo.min();
+          ledGreen.off();
+          ledRed.on();
      } else {
-          servo.max()
+          servo.max();
+          ledGreen.on();
+          ledRed.off();
      }
    });
 

@@ -1,0 +1,15 @@
+{
+  "name": "sesame-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "servo-continuous.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^3.3.0",
+    "johnny-five": "^0.10.0"
+  }
+}

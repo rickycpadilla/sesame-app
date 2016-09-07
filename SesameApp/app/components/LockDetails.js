@@ -5,85 +5,84 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  AlertIOS
 } from 'react-native';
 var styles = require('../config/styles');
-// const firebase = require('firebase');
-//
-// // Initialize Firebase
-// const firebaseConfig = {
-//   authDomain: "",
-//   databaseURL: "https://groceryapp-6b27e.firebaseio.com/",
-//   storageBucket: "",
-// };
-// const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-var firebaseApp = require('firebase');
+const firebase = require('firebase');
+
+import PasscodeAuth from 'react-native-passcode-auth';
+
+const firebaseConfig = {
+  authDomain: "",
+  databaseURL: "https://todo-cc9d9.firebaseio.com/",
+  storageBucket: "",
+};
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 class LockDetails extends Component {
-
-  // Scott's code start
 
   getRef() {
     return firebaseApp.database().ref('locked');
   }
 
-  // Scott's code end
-
-
   constructor(props) {
     super(props);
-    this.itemsRef = this.getRef();
-    console.log(this.itemsRef);
-    this.itemsRef.on('value', function(snapshot) {
-            console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-             this.state = {locked: snapshot.val().locked}
-             console.log(snapshot.val().locked);
-        }.bind(this))
-    //this.state = {locked: snapshot.val().locked;
-    //snapshot.val().locked
+    this.state = {locked: undefined};
+    this.state.ready = false;
+    this.getRef().once('value', function(snapshot) {
+      this.state.locked = snapshot.child("locked").val();
+      this.state.ready = true;
+      this.forceUpdate()
+    }.bind(this))
   }
-
-
-//   componentDidMount(state) {
-//     this.itemsRef.on('value', function(snapshot) {
-//         console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-//          this.setState({
-//            locked: snapshot.val().locked
-//          })
-//     })
-// }.bind(this)
 
   onChange(state) {
-    this.setState({
-      locked: !this.state.locked
-    });
+    // GETTING ERRORS?
+    // To make this not throw errors, comment out the 2 snippets below
+    // that are associated with touch ID
+    // FROM HERE >>>>>>>
+    // PasscodeAuth.authenticate('to access your lock')
+    // .then(success => {
+    //   this.state.locked ?  AlertIOS.alert('Successfully Unlocked') : AlertIOS.alert('Successfully Locked')
+      // <<<<<<<< TO HERE
 
-    //console.log(this.state);
-    this.itemsRef.update(this.state)
+      this.setState({
+        locked: !this.state.locked
+      }, function(){
+        this.getRef().update({locked: this.state.locked})
+      });
 
-
+      // AND FROM HERE >>>>>>>
+    // })
+    // .catch(error => {
+    //   AlertIOS.alert('Authentication Failed');
+    // });
+    // <<<<<<< TO HERE
   }
 
-
   render() {
-    return (
-      // <View style={styles.lockContainer} onPress={this.onChange.bind(this)}>
-        <TouchableOpacity style={styles.lockContainer} onPress={this.onChange.bind(this)}>
-          <View style={styles.lockImageContainer}>
-            <Image
-              source={require('../images/WhiteLock.png')}
-              style={styles.lockImage}
-            />
-          </View>
-          <View style={styles.lockDetails}>
-            <Text>Home</Text>
-            <Text>Front Door</Text>
-            <Text>Unlocked</Text>
-          </View>
-        </TouchableOpacity>
-      // </View>
-    );
+    if (!this.state.ready){
+      return null
+    }
+    else {
+      return (
+          <TouchableOpacity style={styles.lockContainer} onPress={this.onChange.bind(this)}>
+            <View style={this.state.locked ? styles.lockedImageContainer : styles.unlockedImageContainer}>
+              <Image
+                source={require('../images/WhiteLock.png')}
+                style={this.state.locked ? styles.lockImage : styles.unlockImage}
+              />
+            </View>
+            <View style={styles.lockDetails}>
+              <Text>Home</Text>
+              <Text>Front Door</Text>
+              <Text>{this.state.locked ? 'Locked' : 'Unlocked'}</Text>
+            </View>
+          </TouchableOpacity>
+      );
+    }
   }
 }
 

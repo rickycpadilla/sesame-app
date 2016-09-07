@@ -24,8 +24,12 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+<<<<<<< HEAD
 		96B87ABB9DA84D7B98E4F58D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFF24AE4A9F4A4AA417C0C0 /* libc++.tbd */; };
 		E05887B4FC4C4B3681A765F7 /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD77266C6B524A49B75C98DD /* libRealmReact.a */; };
+=======
+		A1B6362BE44E4EF29FDB5BE5 /* libPasscodeAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE6F95FEB0042148540B5B2 /* libPasscodeAuth.a */; };
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +117,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		F00FA7701D7F78BE00048353 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3576D09C9927456AA4C39082 /* PasscodeAuth.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = PasscodeAuth;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -125,7 +136,10 @@
 		00E356EE1AD99517003FC87E /* SesameAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SesameAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SesameAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SesameAppTests.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		01E1711AFF314268B9711855 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+=======
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SesameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SesameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,11 +150,18 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SesameApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SesameApp/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		2D9FC09D65E04362A441C184 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
 		5EFF24AE4A9F4A4AA417C0C0 /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		DD77266C6B524A49B75C98DD /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
+=======
+		3576D09C9927456AA4C39082 /* PasscodeAuth.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = PasscodeAuth.xcodeproj; path = "../node_modules/react-native-passcode-auth/PasscodeAuth.xcodeproj"; sourceTree = "<group>"; };
+		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		DBE6F95FEB0042148540B5B2 /* libPasscodeAuth.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libPasscodeAuth.a; sourceTree = "<group>"; };
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +187,13 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+<<<<<<< HEAD
 				E05887B4FC4C4B3681A765F7 /* libRealmReact.a in Frameworks */,
 				96B87ABB9DA84D7B98E4F58D /* libc++.tbd in Frameworks */,
 				0EDEE0ED38AC4391BFD64133 /* libz.tbd in Frameworks */,
+=======
+				A1B6362BE44E4EF29FDB5BE5 /* libPasscodeAuth.a in Frameworks */,
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +333,11 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+<<<<<<< HEAD
 				2D9FC09D65E04362A441C184 /* RealmReact.xcodeproj */,
+=======
+				3576D09C9927456AA4C39082 /* PasscodeAuth.xcodeproj */,
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -339,6 +368,14 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* SesameApp.app */,
 				00E356EE1AD99517003FC87E /* SesameAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F00FA76D1D7F78BE00048353 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F00FA7711D7F78BE00048353 /* libPasscodeAuth.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,7 +425,11 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+<<<<<<< HEAD
 				LastUpgradeCheck = 730;
+=======
+				LastUpgradeCheck = 610;
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -409,6 +450,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = F00FA76D1D7F78BE00048353 /* Products */;
+					ProjectRef = 3576D09C9927456AA4C39082 /* PasscodeAuth.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -540,6 +585,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		F00FA7711D7F78BE00048353 /* libPasscodeAuth.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPasscodeAuth.a;
+			remoteRef = F00FA7701D7F78BE00048353 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -634,7 +686,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+=======
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SesameApp.app/SesameApp";
 			};
@@ -652,7 +707,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+=======
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SesameApp.app/SesameApp";
 			};
@@ -667,7 +725,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/realm/src/**",
+=======
+					"$(SRCROOT)/../node_modules/react-native-passcode-auth",
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 				);
 				INFOPLIST_FILE = SesameApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -676,7 +738,10 @@
 					"-ObjC",
 					"-lc++",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+=======
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 				PRODUCT_NAME = SesameApp;
 			};
 			name = Debug;
@@ -689,7 +754,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/realm/src/**",
+=======
+					"$(SRCROOT)/../node_modules/react-native-passcode-auth",
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 				);
 				INFOPLIST_FILE = SesameApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -698,7 +767,10 @@
 					"-ObjC",
 					"-lc++",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+=======
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 				PRODUCT_NAME = SesameApp;
 			};
 			name = Release;
@@ -742,7 +814,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/realm/src/**",
+=======
+					"$(SRCROOT)/../node_modules/react-native-passcode-auth",
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -783,7 +859,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/realm/src/**",
+=======
+					"$(SRCROOT)/../node_modules/react-native-passcode-auth",
+>>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
