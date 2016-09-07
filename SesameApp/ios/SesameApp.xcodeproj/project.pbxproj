@@ -24,12 +24,9 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-<<<<<<< HEAD
 		96B87ABB9DA84D7B98E4F58D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFF24AE4A9F4A4AA417C0C0 /* libc++.tbd */; };
 		E05887B4FC4C4B3681A765F7 /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD77266C6B524A49B75C98DD /* libRealmReact.a */; };
-=======
 		A1B6362BE44E4EF29FDB5BE5 /* libPasscodeAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE6F95FEB0042148540B5B2 /* libPasscodeAuth.a */; };
->>>>>>> b19f92df8fdfe1b4de5e25bc145b7058fcdf9a76
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
