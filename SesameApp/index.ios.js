@@ -7,11 +7,9 @@ import {
   Text,
   View,
   NavigatorIOS,
-  Navigator,
-  TouchableHighlight,
-  TouchableWithoutFeedback,
   ScrollView,
-  Dimensions
+  Dimensions,
+  StatusBar
 } from 'react-native';
 var styles = require('./app/config/styles');
 var TestContainer = require('./app/components/TestContainer');
@@ -36,14 +34,15 @@ const COMP_WIDTH = Dimensions.get('window').width;
 
 class SesameApp extends Component {
   render() {
+
     return (
       <ScrollView horizontal={true}
         decelerationRate={0}
         snapToInterval={COMP_WIDTH}
         showsHorizontalScrollIndicator={false}
         pagingEnabled={false}
-        //snapToAlignment="start"
       >
+        <StatusBar hidden={true} />
         <Onboarding1 />
         <Onboarding2 />
         <Onboarding3 />
