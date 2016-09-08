@@ -9,6 +9,7 @@
     "firebase": "^3.3.0",
     "react": "15.3.1",
     "react-native": "0.32.0",
+    "react-native-page-control": "^1.0.7",
     "react-native-passcode-auth": "^1.0.0"
   }
 }

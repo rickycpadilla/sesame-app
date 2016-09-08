@@ -6,6 +6,14 @@ var styles = StyleSheet.create({
 
     navigator: {flex: 1},
 
+    onboardingContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: null,
+        height: null
+    },
+
     container: {
         flex: 1,
         flexDirection: 'column',
