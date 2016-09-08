@@ -32,11 +32,13 @@ class LockDetails extends Component {
     super(props);
     this.state = {locked: undefined};
     this.state.ready = false;
+  }
+
+  componentWillMount() {
     this.getRef().once('value', function(snapshot) {
-      this.state.locked = snapshot.child("locked").val();
-      this.state.ready = true;
-      this.forceUpdate()
-    }.bind(this))
+      this.setState({locked: snapshot.child("locked").val()});
+      this.setState({ready: true})
+      }.bind(this))
   }
 
   onChange(state) {
