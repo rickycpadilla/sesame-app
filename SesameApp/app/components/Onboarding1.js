@@ -5,7 +5,8 @@ import {
   View,
   Image,
   NavigatorIOS,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Dimensions
 } from 'react-native';
 var styles = require('../config/styles');
 
@@ -15,9 +16,12 @@ var Onboarding1 = React.createClass({
     return (
 
         <Image
-          style={styles.container}
-          onPress={this._handleChangePage}
-          source={require('../images/Onboarding1.jpg')}
+          style={{width:  Dimensions.get('window').width,
+            height:  Dimensions.get('window').height
+
+          }}
+
+          source={require('../images/Onboarding1.png')}
         />
     )
   }
