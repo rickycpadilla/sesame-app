@@ -1,36 +1,27 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
-  Text,
   View,
   Image,
   Dimensions,
   TouchableOpacity
 } from 'react-native';
-var styles = require('../config/styles');
+var screen = Dimensions.get('window');
 
 class Onboarding3 extends Component {
   render (){
     return (
-        // <Image
-        //   style={{width:  Dimensions.get('window').width,
-        //     height:  Dimensions.get('window').height
-        //
-        //   }}
-        //   source={require('../images/Onboarding3.png')}
-        // />
+      <View>
         <Image
-          style={{width:  Dimensions.get('window').width,
-            height:  Dimensions.get('window').height
-
-          }}
-          source={require('../images/Onboarding3.png')}
-        >
-          <TouchableOpacity
-            style={{position:'absolute', left:0, right:0, bottom:40, width: 600, height: 100,}} />
-
-
-        </Image>
+          style={{width:  screen.width, height:  screen.height * .88}}
+          source={require('../images/Onboarding3.1.png')}
+        />
+        <TouchableOpacity>
+          <Image
+            style={{width:  screen.width, height:  screen.height * .12}}
+            source={require('../images/Onboarding3.2.png')}
+          />
+        </TouchableOpacity>
+      </View>
     )
   }
 }
