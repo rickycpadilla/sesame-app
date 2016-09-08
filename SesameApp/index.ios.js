@@ -44,8 +44,6 @@ class SesameApp extends Component {
   }
 
   onScroll(e, state){
-    console.log("********************************************");
-    console.log(e.nativeEvent);
     var offsetX = e.nativeEvent.contentOffset.x,
         pageWidth = screen.width - 10;
     this.setState({
@@ -60,7 +58,7 @@ class SesameApp extends Component {
         <Image source={require('./app/images/onboardingBg.png')}
           style={styles.onboardingContainer}
         >
-          <PageControl style={{position:'absolute', left:0, right:0, top:40}} numberOfPages={3} currentPage={this.state.currentPage} hidesForSinglePage={true} pageIndicatorTintColor='gray' indicatorSize={{width:8, height:8}} currentPageIndicatorTintColor='black' />
+          <PageControl style={{position:'absolute', left:0, right:0, top:40}} numberOfPages={3} currentPage={this.state.currentPage} hidesForSinglePage={true} pageIndicatorTintColor='#DDE1E2' indicatorSize={{width:10, height:10}} currentPageIndicatorTintColor='#8B999F' />
           <ScrollView horizontal={true}
             decelerationRate={0}
             snapToInterval={COMP_WIDTH}
