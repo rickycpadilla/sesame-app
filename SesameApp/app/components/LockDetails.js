@@ -10,16 +10,17 @@ import {
 } from 'react-native';
 var styles = require('../config/styles');
 
-const firebase = require('firebase');
-
-import PasscodeAuth from 'react-native-passcode-auth';
-
-const firebaseConfig = {
-  authDomain: "",
-  databaseURL: "https://todo-cc9d9.firebaseio.com/",
-  storageBucket: "",
-};
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// const firebase = require('firebase');
+//
+// import PasscodeAuth from 'react-native-passcode-auth';
+//
+// const firebaseConfig = {
+//   authDomain: "",
+//   databaseURL: "https://todo-cc9d9.firebaseio.com/",
+//   storageBucket: "",
+// };
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
+var firebaseApp = require('./Firebase');
 
 class LockDetails extends Component {
 
