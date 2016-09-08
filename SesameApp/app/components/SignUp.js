@@ -4,7 +4,8 @@ import {
   TextInput,
   TouchableHighlight,
   AlertIOS,
-  View
+  View,
+  Image
 } from 'react-native';
 
 var styles = require('../config/styles');
@@ -32,7 +33,8 @@ class SignUp extends Component {
 
   render() {
     return (
-        <View style={{marginTop : 100}}>
+        <View style={styles.formContainer}>
+
           <TextInput
             style={styles.textinput}
             onChangeText={(text) => this.setState({email: text})}
@@ -51,6 +53,7 @@ class SignUp extends Component {
               Sign Up
             </Text>
           </TouchableHighlight>
+
         </View>
       );
     }
