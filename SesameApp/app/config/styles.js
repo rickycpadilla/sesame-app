@@ -108,7 +108,24 @@ var styles = StyleSheet.create({
         height: 1,
         marginLeft: 0,
         marginRight: 0,
-    }
+    },
+    //Mike code below for form
+  textinput: {
+     height: 40,
+     borderColor: 'red',
+     borderWidth: 1
+   },
+
+   primary_button: {
+     margin: 10,
+     padding: 15,
+     backgroundColor: '#529ecc'
+   },
+
+   primary_button_text: {
+     color: '#FFF',
+     fontSize: 18
+   },
 
 });
 
