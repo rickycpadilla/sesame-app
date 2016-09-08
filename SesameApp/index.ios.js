@@ -13,15 +13,19 @@ var TestContainer = require('./app/components/TestContainer');
 var MyLocksContainer = require('./app/components/MyLocksContainer');
 var SignUp = require('./app/components/SignUp')
 var SignIn = require('./app/components/SignIn')
+var OnboardingContainer = require('./app/components/OnboardingContainer');
 
 class SesameApp extends Component {
   render() {
     return (
       <NavigatorIOS
         style={styles.navigator}
+        // Comment out line below to show Nav Bar
+        navigationBarHidden={true}
         // DURING DEVELOPMENT - TO TEST ANOTHER SCENE, CHANGE THE COMPONENT BELOW
         // TO THE ONE YOU WANT TO TEST (ie: component: HomeContainer)
         initialRoute={{component: SignIn, title: 'SesameApp'}}/>
+
     );
   }
 }
