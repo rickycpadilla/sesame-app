@@ -22,6 +22,24 @@ var styles = StyleSheet.create({
         backgroundColor: '#F1F5F6',
     },
 
+    formContainer: {
+        flex: 9,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 30,
+        backgroundColor: '#F1F5F6',
+        alignItems: 'stretch',
+    },
+
+    underFormContainer: {
+      flex: 1,
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#F1F5F6',
+    },
+
     buttonText: {
         fontSize: 18,
         color: 'white',
@@ -111,20 +129,26 @@ var styles = StyleSheet.create({
     },
     //Mike code below for form
   textinput: {
-     height: 40,
-     borderColor: 'red',
-     borderWidth: 1
+     height: 45,
+     backgroundColor: 'white',
+     marginTop: 10,
+     paddingLeft: 20
    },
 
    primary_button: {
-     margin: 10,
+     alignItems: 'center',
+     marginTop: 20,
      padding: 15,
-     backgroundColor: '#529ecc'
+     width: null,
+     backgroundColor: '#4CD964',
+     borderRadius: 10,
    },
 
    primary_button_text: {
      color: '#FFF',
-     fontSize: 18
+     fontSize: 16,
+     fontWeight: 'bold',
+     letterSpacing: 3
    },
 
 });

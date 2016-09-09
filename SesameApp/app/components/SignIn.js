@@ -4,7 +4,8 @@ import {
   TextInput,
   TouchableHighlight,
   AlertIOS,
-  View
+  View,
+  Image
 } from 'react-native';
 
 var styles = require('../config/styles');
@@ -32,26 +33,36 @@ class SignIn extends Component {
 
   render() {
     return (
-        <View style={{marginTop : 100}}>
+      <View style={{flex: 10}}>
+        <View style={styles.formContainer}>
+          <Image
+            style={{resizeMode:'contain', height: 60, width: 200, alignSelf: 'center', marginBottom: 50}}
+            source={require('../images/sesame.png')}
+          />
           <TextInput
             style={styles.textinput}
             onChangeText={(text) => this.setState({email: text})}
             value={this.state.email}
-            placeholder={"Email"}
+            placeholder={"  Email"}
           />
           <TextInput
             style={styles.textinput}
             onChangeText={(text) => this.setState({password: text})}
             value={this.state.password}
             secureTextEntry={true}
-            placeholder={"Password"}
+            placeholder={"  Password"}
           />
           <TouchableHighlight onPress={this.emailSignIn.bind(this)} style={styles.primary_button}>
             <Text style={styles.primary_button_text}>
-              Sign In
+              SIGN IN
             </Text>
           </TouchableHighlight>
         </View>
+        <View style={styles.underFormContainer}>
+          <Text style={{color: '#8B999F', fontWeight: 'bold', letterSpacing: 1}}>Don't have an account?</Text>
+        </View>
+
+      </View>
       );
     }
   }
