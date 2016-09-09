@@ -14,14 +14,17 @@ var OnboardingContainer = require('./app/components/OnboardingContainer');
 
 
 class SesameApp extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {navigationBarHidden: true}
+  }
+
   render() {
     return (
       <NavigatorIOS
         style={styles.navigator}
-        // Comment out line below to show Nav Bar
-        navigationBarHidden={true}
-        // DURING DEVELOPMENT - TO TEST ANOTHER SCENE, CHANGE THE COMPONENT BELOW
-        // TO THE ONE YOU WANT TO TEST (ie: component: HomeContainer)
+        navigationBarHidden={this.state.navigationBarHidden}        // DURING DEVELOPMENT - TO TEST ANOTHER SCENE, CHANGE THE COMPONENT BELOW
         initialRoute={{component: OnboardingContainer, title: 'Sesame'}}/>
     );
   }
