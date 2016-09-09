@@ -26,9 +26,19 @@ class SignIn extends Component {
       const email = this.state.email;
       const pass = this.state.password;
       const auth = app.auth();
-      const promise = auth.signInWithEmailAndPassword(email, pass);
+      const promise = auth.signInWithEmailAndPassword(email, pass).then(user);
       promise.catch(e=>alert(e.message));
-    }
+
+
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          userId = user.uid;
+          console.log(userId);
+          return
+        } else {return}
+      })
+  }
+
 
   render() {
     return (

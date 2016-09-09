@@ -14,6 +14,7 @@ var MyLocksContainer = require('./app/components/MyLocksContainer');
 var SignUp = require('./app/components/SignUp')
 var SignIn = require('./app/components/SignIn')
 var OnboardingContainer = require('./app/components/OnboardingContainer');
+var Update = require('./app/components/UpdateData')
 
 class SesameApp extends Component {
   render() {
@@ -24,7 +25,7 @@ class SesameApp extends Component {
         navigationBarHidden={true}
         // DURING DEVELOPMENT - TO TEST ANOTHER SCENE, CHANGE THE COMPONENT BELOW
         // TO THE ONE YOU WANT TO TEST (ie: component: HomeContainer)
-        initialRoute={{component: SignIn, title: 'SesameApp'}}/>
+        initialRoute={{component: SignUp, title: 'SesameApp'}}/>
 
     );
   }

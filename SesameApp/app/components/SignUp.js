@@ -22,13 +22,14 @@ class SignUp extends Component {
     }
   }
 
-  emailSignIn(){
-      const email = this.state.email;
-      const pass = this.state.password;
-      const auth = app.auth();
-      const promise = auth.createUserWithEmailAndPassword(email, pass);
-      promise.catch(e=>alert(e.message));
-    }
+  emailSignUp(){
+    const email = this.state.email;
+    const pass = this.state.password;
+    const auth = app.auth();
+    const promise = auth.createUserWithEmailAndPassword(email, pass).then(function(user){
+      firebase.database().ref('users/'+user.uid).set({locks : ""})
+    }).catch(e=>alert(e.message));
+  }
 
   render() {
     return (
@@ -46,7 +47,7 @@ class SignUp extends Component {
             secureTextEntry={true}
             placeholder={"Password"}
           />
-          <TouchableHighlight onPress={this.emailSignIn.bind(this)} style={styles.primary_button}>
+          <TouchableHighlight onPress={this.emailSignUp.bind(this)} style={styles.primary_button}>
             <Text style={styles.primary_button_text}>
               Sign Up
             </Text>
