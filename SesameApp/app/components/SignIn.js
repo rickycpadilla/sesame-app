@@ -43,14 +43,14 @@ class SignIn extends Component {
             style={styles.textinput}
             onChangeText={(text) => this.setState({email: text})}
             value={this.state.email}
-            placeholder={"Email"}
+            placeholder={"  Email"}
           />
           <TextInput
             style={styles.textinput}
             onChangeText={(text) => this.setState({password: text})}
             value={this.state.password}
             secureTextEntry={true}
-            placeholder={"Password"}
+            placeholder={"  Password"}
           />
           <TouchableHighlight onPress={this.emailSignIn.bind(this)} style={styles.primary_button}>
             <Text style={styles.primary_button_text}>

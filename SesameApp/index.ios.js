@@ -12,6 +12,8 @@ var styles = require('./app/config/styles');
 var TestContainer = require('./app/components/TestContainer');
 var OnboardingContainer = require('./app/components/OnboardingContainer');
 var SignIn = require('./app/components/SignIn');
+var SignUp = require('./app/components/SignUp');
+
 
 class SesameApp extends Component {
   render() {
@@ -22,7 +24,7 @@ class SesameApp extends Component {
         navigationBarHidden={true}
         // DURING DEVELOPMENT - TO TEST ANOTHER SCENE, CHANGE THE COMPONENT BELOW
         // TO THE ONE YOU WANT TO TEST (ie: component: HomeContainer)
-        initialRoute={{component: SignIn, title: 'Sesame'}}/>
+        initialRoute={{component: SignUp, title: 'Sesame'}}/>
     );
   }
 }

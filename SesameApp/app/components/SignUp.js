@@ -33,28 +33,55 @@ class SignUp extends Component {
 
   render() {
     return (
+      <View style={{flex: 10}}>
         <View style={styles.formContainer}>
 
           <TextInput
             style={styles.textinput}
+            placeholder={"  Name"}
+          />
+          <TextInput
+            style={styles.textinput}
             onChangeText={(text) => this.setState({email: text})}
             value={this.state.email}
-            placeholder={"Email"}
+            placeholder={"  Email"}
           />
           <TextInput
             style={styles.textinput}
             onChangeText={(text) => this.setState({password: text})}
             value={this.state.password}
             secureTextEntry={true}
-            placeholder={"Password"}
+            placeholder={"  Password"}
           />
-          <TouchableHighlight onPress={this.emailSignIn.bind(this)} style={styles.primary_button}>
+          <TextInput
+            style={styles.textinput}
+            placeholder={"  Confirm Password"}
+          />
+          <TouchableHighlight
+            onPress={this.emailSignIn.bind(this)}
+            style={styles.primary_button}>
             <Text style={styles.primary_button_text}>
-              Sign Up
+              CREATE ACCOUNT
             </Text>
           </TouchableHighlight>
+          <Text
+            style={{
+              color: '#8B999F',
+              letterSpacing: 1,
+              textAlign: 'center',
+              marginTop: 40
+            }}>
+            By creating an account you agree to the
+            <Text style={{fontWeight: 'bold'}}> Terms of Use.</Text>
+          </Text>
 
         </View>
+        <View style={styles.underFormContainer}>
+          <Text style={{color: '#8B999F', fontWeight: 'bold', letterSpacing: 1}}>
+            Already have an account?
+          </Text>
+        </View>
+      </View>
       );
     }
   }
