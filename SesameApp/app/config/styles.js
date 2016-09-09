@@ -130,10 +130,9 @@ var styles = StyleSheet.create({
     //Mike code below for form
   textinput: {
      height: 45,
-    //  borderColor: null,
-    //  borderWidth: 0,
      backgroundColor: 'white',
      marginTop: 10,
+     paddingLeft: 20
    },
 
    primary_button: {

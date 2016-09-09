@@ -38,24 +38,25 @@ class SignUp extends Component {
 
           <TextInput
             style={styles.textinput}
-            placeholder={"  Name"}
+            placeholder={"Name"}
           />
           <TextInput
             style={styles.textinput}
             onChangeText={(text) => this.setState({email: text})}
             value={this.state.email}
-            placeholder={"  Email"}
+            placeholder={"Email"}
           />
           <TextInput
             style={styles.textinput}
             onChangeText={(text) => this.setState({password: text})}
             value={this.state.password}
             secureTextEntry={true}
-            placeholder={"  Password"}
+            placeholder={"Password"}
           />
           <TextInput
             style={styles.textinput}
-            placeholder={"  Confirm Password"}
+            secureTextEntry={true}
+            placeholder={"Confirm Password"}
           />
           <TouchableHighlight
             onPress={this.emailSignIn.bind(this)}
