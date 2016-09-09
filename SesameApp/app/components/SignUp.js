@@ -3,6 +3,7 @@ import {
   Text,
   TextInput,
   TouchableHighlight,
+  TouchableOpacity,
   AlertIOS,
   View,
   Image
@@ -11,6 +12,7 @@ import {
 var styles = require('../config/styles');
 var app = require('./Firebase');
 var Button = require('./button');
+var LocksContainer = require('./MyLocksContainer');
 
 class SignUp extends Component {
 
@@ -22,14 +24,23 @@ class SignUp extends Component {
       errors:[]
     }
   }
+  SignIn(){
+    this.props.navigator.pop()
+  }
 
-  emailSignIn(){
-      const email = this.state.email;
-      const pass = this.state.password;
-      const auth = app.auth();
-      const promise = auth.createUserWithEmailAndPassword(email, pass);
-      promise.catch(e=>alert(e.message));
-    }
+  emailSignUp(){
+    const email = this.state.email;
+    const pass = this.state.password;
+    const userName = this.state.userName;
+    const auth = app.auth();
+    const promise = auth.createUserWithEmailAndPassword(email, pass).then(function(user){
+      firebase.database().ref('users/'+user.uid).set({locks : "", name : userName})
+      this.props.navigator.push({
+      title: 'Lock Details',
+      component: LocksContainer
+    })
+  }.bind(this)).catch(e=>alert(e.message));
+  }
 
   render() {
     return (
@@ -38,6 +49,8 @@ class SignUp extends Component {
 
           <TextInput
             style={styles.textinput}
+            onChangeText={(text) => this.setState({userName: text})}
+            value={this.state.userName}
             placeholder={"Name"}
           />
           <TextInput
@@ -59,7 +72,7 @@ class SignUp extends Component {
             placeholder={"Confirm Password"}
           />
           <TouchableHighlight
-            onPress={this.emailSignIn.bind(this)}
+            onPress={this.emailSignUp.bind(this)}
             style={styles.primary_button}>
             <Text style={styles.primary_button_text}>
               CREATE ACCOUNT
@@ -78,9 +91,12 @@ class SignUp extends Component {
 
         </View>
         <View style={styles.underFormContainer}>
-          <Text style={{color: '#8B999F', fontWeight: 'bold', letterSpacing: 1}}>
-            Already have an account?
-          </Text>
+          <TouchableOpacity onPress={this.SignIn.bind(this)}>
+            <Text style={{color: '#8B999F', fontWeight: 'bold', letterSpacing: 1}}>
+              Already have an account?
+            </Text>
+          </TouchableOpacity>
+
         </View>
       </View>
       );
