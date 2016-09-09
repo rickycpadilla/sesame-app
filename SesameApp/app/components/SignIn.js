@@ -5,7 +5,8 @@ import {
   TouchableHighlight,
   AlertIOS,
   View,
-  Image
+  Image,
+  StatusBar
 } from 'react-native';
 
 var styles = require('../config/styles');
@@ -34,6 +35,7 @@ class SignIn extends Component {
   render() {
     return (
       <View style={{flex: 10}}>
+        <StatusBar hidden={false} />
         <View style={styles.formContainer}>
           <Image
             style={{resizeMode:'contain', height: 60, width: 200, alignSelf: 'center', marginBottom: 50}}
