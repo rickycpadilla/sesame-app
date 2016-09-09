@@ -14,6 +14,7 @@ class MyLocks extends Component {
   super(props, context);
   this.onSignup = this.onSignup.bind(this);
   this.onHome = this.onHome.bind(this);
+  
 }
 onSignup() {
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

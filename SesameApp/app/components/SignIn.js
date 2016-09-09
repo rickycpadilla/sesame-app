@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Text,
   TextInput,
   TouchableHighlight,
+  TouchableOpacity,
   AlertIOS,
   View,
   Image
@@ -11,25 +13,53 @@ import {
 var styles = require('../config/styles');
 var app = require('./Firebase');
 var Button = require('./button');
+var Signup = require('./SignUp');
+
+
+var LocksContainer = require('./MyLocksContainer');
 
 class SignIn extends Component {
 
   constructor(props){
     super(props);
+    this.onSignup = this.onSignup.bind(this)
+    this.emailSignIn = this.emailSignIn.bind(this)
     this.state = {
       email: '',
       password: '',
       errors:[]
     }
   }
-
+  onSignup() {
+    this.props.navigator.push({
+    title: 'sign up',
+    component: Signup
+  })
+}
   emailSignIn(){
       const email = this.state.email;
       const pass = this.state.password;
       const auth = app.auth();
-      const promise = auth.signInWithEmailAndPassword(email, pass);
-      promise.catch(e=>alert(e.message));
-    }
+      const promise = auth.signInWithEmailAndPassword(email, pass).then(function(user){
+        AsyncStorage.setItem("loggedIn", "true")
+        this.props.navigator.push({
+        title: 'sign up',
+        component: LocksContainer,
+        //passProps: user.uid
+      })
+    }.bind(this)).catch(function(e){
+        alert(e)
+      });
+        // promise.catch(e=>{
+        //   alert(e.message);
+        //   alert(e.code)
+        // }).then(function(){
+        //      if(e) {return};
+        //      alert('poop')
+        //    })
+       }
+
+
 
   render() {
     return (
@@ -59,7 +89,9 @@ class SignIn extends Component {
           </TouchableHighlight>
         </View>
         <View style={styles.underFormContainer}>
+          <TouchableOpacity onPress={this.onSignup.bind(this)}>
           <Text style={{color: '#8B999F', fontWeight: 'bold', letterSpacing: 1}}>Don't have an account?</Text>
+          </TouchableOpacity >
         </View>
 
       </View>
