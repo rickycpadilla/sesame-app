@@ -23,7 +23,7 @@ class Onboarding3 extends Component {
           style={{width:  screen.width, height:  screen.height * .88}}
           source={require('../images/Onboarding3.1.png')}
         />
-      <TouchableOpacity onPress={this.props.onSignIn}>
+        <TouchableOpacity onPress={this.props.onSignIn}>
           <Image
             style={{width:  screen.width, height:  screen.height * .12}}
             source={require('../images/Onboarding3.2.png')}

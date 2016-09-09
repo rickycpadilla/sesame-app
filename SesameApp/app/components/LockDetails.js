@@ -9,16 +9,10 @@ import {
   AlertIOS
 } from 'react-native';
 var styles = require('../config/styles');
-const firebase = require('firebase');
+var firebaseApp = require('./Firebase')
 
 import PasscodeAuth from 'react-native-passcode-auth';
 
-const firebaseConfig = {
-  authDomain: "",
-  databaseURL: "https://todo-cc9d9.firebaseio.com/",
-  storageBucket: "",
-};
-const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 class LockDetails extends Component {
 

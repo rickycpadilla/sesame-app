@@ -6,7 +6,8 @@ import {
   AlertIOS,
   View,
   Image,
-  StatusBar
+  StatusBar,
+  AsyncStorage
 } from 'react-native';
 
 var styles = require('../config/styles');
@@ -24,12 +25,21 @@ class SignIn extends Component {
     }
   }
 
+  saveData(value) {
+    AsyncStorage.setItem("loggedIn", value);
+  }
+
   emailSignIn(){
       const email = this.state.email;
       const pass = this.state.password;
       const auth = app.auth();
+      const that = this;
       const promise = auth.signInWithEmailAndPassword(email, pass);
-      promise.catch(e=>alert(e.message));
+      promise.then(function(user){
+        // that.saveData(true)
+        AsyncStorage.setItem("loggedIn", "true");
+      })
+      .catch(e=>alert(e.message));
     }
 
   render() {

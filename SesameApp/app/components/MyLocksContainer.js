@@ -3,7 +3,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  StatusBar
 } from 'react-native';
 var styles = require('../config/styles');
 var LockDetails = require('./LockDetails');
@@ -12,6 +13,7 @@ class MyLocksContainer extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar hidden={false} />
         <LockDetails />
       </View>
     );
