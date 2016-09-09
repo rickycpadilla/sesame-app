@@ -25,10 +25,6 @@ class SignIn extends Component {
     }
   }
 
-  saveData(value) {
-    AsyncStorage.setItem("loggedIn", value);
-  }
-
   emailSignIn(){
       const email = this.state.email;
       const pass = this.state.password;
