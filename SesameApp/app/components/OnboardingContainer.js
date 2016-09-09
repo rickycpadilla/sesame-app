@@ -13,13 +13,24 @@ var styles = require('../config/styles');
 var Onboarding1 = require('./Onboarding1');
 var Onboarding2 = require('./Onboarding2');
 var Onboarding3 = require('./Onboarding3');
+var SignIn = require('./SignIn');
 var screen = Dimensions.get('window');
 var PageControl = require('react-native-page-control');
 
 class OnboardingContainer extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
+    this.onSignIn = this.onSignIn.bind(this);
     this.state = {currentPage: 0};
+  }
+
+  onSignIn() {
+  console.log("~~~~~~~~~~~~~~~~~~~Æ~~~~~~~~~~~~~~~~~~~~~~~~~")
+  console.log(this.props);
+  this.props.navigator.push({
+    title: 'Sign In',
+    component: SignIn
+  })
   }
 
   onScroll(e, state){
@@ -52,7 +63,10 @@ class OnboardingContainer extends Component {
             <StatusBar hidden={true} />
             <Onboarding1 />
             <Onboarding2 />
-            <Onboarding3 />
+            <Onboarding3
+              onSignIn={this.onSignIn}
+
+               />
           </ScrollView>
         </Image>
     );

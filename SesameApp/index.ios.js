@@ -12,6 +12,7 @@ var styles = require('./app/config/styles');
 var TestContainer = require('./app/components/TestContainer');
 var OnboardingContainer = require('./app/components/OnboardingContainer');
 
+
 class SesameApp extends Component {
   render() {
     return (

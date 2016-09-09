@@ -3,11 +3,19 @@ import {
   View,
   Image,
   Dimensions,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 var screen = Dimensions.get('window');
+var SignIn = require('./SignIn')
+
+
 
 class Onboarding3 extends Component {
+
+//   static propTypes = {
+//   navigator: PropTypes.object.isRequired,
+// }
+
   render (){
     return (
       <View>
@@ -15,7 +23,7 @@ class Onboarding3 extends Component {
           style={{width:  screen.width, height:  screen.height * .88}}
           source={require('../images/Onboarding3.1.png')}
         />
-        <TouchableOpacity>
+      <TouchableOpacity onPress={this.props.onSignIn}>
           <Image
             style={{width:  screen.width, height:  screen.height * .12}}
             source={require('../images/Onboarding3.2.png')}
