@@ -42,7 +42,7 @@ class SignIn extends Component {
       const pass = this.state.password;
       const auth = app.auth();
       const promise = auth.signInWithEmailAndPassword(email, pass).then(function(user){
-        AsyncStorage.setItem("loggedIn", "true")
+        AsyncStorage.setItem("userID", user.uid)
         this.props.navigator.push({
         title: 'sign up',
         component: LocksContainer,

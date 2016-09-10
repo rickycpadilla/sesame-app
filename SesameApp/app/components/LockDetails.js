@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   AppRegistry,
   StyleSheet,
   Text,
@@ -16,9 +17,7 @@ import PasscodeAuth from 'react-native-passcode-auth';
 
 class LockDetails extends Component {
 
-  getRef() {
-    return app.database().ref('locked');
-  }
+
 
   constructor(props) {
     super(props);
@@ -27,10 +26,13 @@ class LockDetails extends Component {
   }
 
   componentWillMount() {
-    this.getRef().once('value', function(snapshot) {
+
+    AsyncStorage.getItem("userID").then((value) => {
+      app.database().ref('users/' + value).once('value', function(snapshot) {
       this.setState({locked: snapshot.child("locked").val()});
       this.setState({ready: true})
-      }.bind(this))
+    }.bind(this))
+    }).done()
   }
 
   onChange(state) {
@@ -46,7 +48,9 @@ class LockDetails extends Component {
       this.setState({
         locked: !this.state.locked
       }, function(){
-        this.getRef().update({locked: this.state.locked})
+        AsyncStorage.getItem("userID").then((value) => {
+          app.database().ref('users/' + value).update({locked: this.state.locked})
+        }).done()
       });
 
       // AND FROM HERE >>>>>>>

@@ -1,17 +1,31 @@
 var five = require("johnny-five");
 var board = new five.Board();
-var firebase = require("firebase");
-var config = {
-  databaseURL: "https://todo-cc9d9.firebaseio.com/",
-  storageBucket: "",
-};
+var firebase = require('firebase');
+
+var firebaseConfig  = {
+    apiKey: "AIzaSyClCUfeUyDVEaRXJMAU96mLoDzG2r92Juo",
+    authDomain: "sesame-data.firebaseapp.com",
+    databaseURL: "https://sesame-data.firebaseio.com",
+    storageBucket: "sesame-data.appspot.com",
+  };
+  
+var app = firebase.initializeApp(firebaseConfig);
 
 
-firebase.initializeApp(config);
- var database = firebase.database();
- var locked = firebase.database().ref('locked');
+
 
  board.on("ready", function() {
+    var locked = app.database().ref('users/IS6ADlLjCWhGCnVW7JsFIlK439t1');
+ //   app.database().ref('/users').on('child_added', function(postSnapshot) {
+ //   var uid = postSnapshot.val().uid;
+ //   locked = app.database().ref('users/' + uid)
+ //   console.log(postSnapshot.child('name').val());
+ // })
+
+   app.database().ref('users').on('value',function(snapshot){
+     //console.log(snapshot.val());
+   })
+
    var ledGreen = new five.Led(13);
    var ledRed = new five.Led(12);
    var servo = new five.Servo({
@@ -22,7 +36,7 @@ firebase.initializeApp(config);
    );
 
    locked.on('value', function(snapshot) {
-     var command = snapshot.val().locked
+     var command = snapshot.child("locked").val()
      if (command == true) {
           servo.min();
           ledGreen.off();

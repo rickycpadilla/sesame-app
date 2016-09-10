@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Text,
   TextInput,
   TouchableHighlight,
@@ -34,10 +35,11 @@ class SignUp extends Component {
     const userName = this.state.userName;
     const auth = app.auth();
     const promise = auth.createUserWithEmailAndPassword(email, pass).then(function(user){
-      firebase.database().ref('users/'+user.uid).set({locks : "", name : userName})
+      firebase.database().ref('users/'+user.uid).set({locked : true, name : userName})
+      AsyncStorage.setItem("userID", user.uid);
       this.props.navigator.push({
       title: 'Lock Details',
-      component: LocksContainer
+      component: LocksContainer,
     })
   }.bind(this)).catch(e=>alert(e.message));
   }
