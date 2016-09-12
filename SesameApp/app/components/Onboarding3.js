@@ -12,9 +12,6 @@ var SignIn = require('./SignIn')
 
 class Onboarding3 extends Component {
 
-//   static propTypes = {
-//   navigator: PropTypes.object.isRequired,
-// }
 
   render (){
     return (

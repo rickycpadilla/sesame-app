@@ -40,6 +40,17 @@ var styles = StyleSheet.create({
       backgroundColor: '#F1F5F6',
     },
 
+    sigOutContainer: {
+      marginTop: 450,
+      flex: 1,
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#F1F5F6',
+      alignSelf: 'center',
+      marginLeft: 150,
+    },
+
     buttonText: {
         fontSize: 18,
         color: 'white',

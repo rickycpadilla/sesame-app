@@ -44,22 +44,13 @@ class SignIn extends Component {
       const promise = auth.signInWithEmailAndPassword(email, pass).then(function(user){
         AsyncStorage.setItem("userID", user.uid)
         this.props.navigator.push({
-        title: 'sign up',
+        title: 'LocksContainer',
         component: LocksContainer,
-        //passProps: user.uid
       })
     }.bind(this)).catch(function(e){
         alert(e)
       });
-        // promise.catch(e=>{
-        //   alert(e.message);
-        //   alert(e.code)
-        // }).then(function(){
-        //      if(e) {return};
-        //      alert('poop')
-        //    })
        }
-
 
 
   render() {

@@ -8,22 +8,20 @@ var firebaseConfig  = {
     databaseURL: "https://sesame-data.firebaseio.com",
     storageBucket: "sesame-data.appspot.com",
   };
-  
+
 var app = firebase.initializeApp(firebaseConfig);
-
-
-
 
  board.on("ready", function() {
     var locked = app.database().ref('users/IS6ADlLjCWhGCnVW7JsFIlK439t1');
- //   app.database().ref('/users').on('child_added', function(postSnapshot) {
- //   var uid = postSnapshot.val().uid;
- //   locked = app.database().ref('users/' + uid)
- //   console.log(postSnapshot.child('name').val());
- // })
+  //   var users = app.database().ref('users');
+  //   users.on('value', function(snapshot) {
+  //    var uid = snapshot.val().uid;
+  //    locked = app.database().ref('users/' + uid)
+  //    console.log(snapshot.val());
+  //  });
 
    app.database().ref('users').on('value',function(snapshot){
-     //console.log(snapshot.val());
+     console.log(snapshot.key);
    })
 
    var ledGreen = new five.Led(13);
