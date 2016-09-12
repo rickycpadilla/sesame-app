@@ -34,7 +34,6 @@ class LockDetails extends Component {
     }.bind(this))
     }).done()
   }
-
   onChange(state) {
     // GETTING ERRORS?
     // To make this not throw errors, comment out the 2 snippets below
