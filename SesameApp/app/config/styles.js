@@ -15,7 +15,7 @@ var styles = StyleSheet.create({
     },
 
     container: {
-        flex: 1,
+        flex: 10,
         flexDirection: 'column',
         alignItems: 'flex-start',
         padding: 10,
@@ -41,14 +41,14 @@ var styles = StyleSheet.create({
     },
 
     sigOutContainer: {
-      marginTop: 450,
+      marginBottom: 20,
       flex: 1,
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#F1F5F6',
       alignSelf: 'center',
-      marginLeft: 150,
+      backgroundColor: '#F1F5F6',
     },
 
     buttonText: {

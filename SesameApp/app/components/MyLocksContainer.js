@@ -13,11 +13,12 @@ var SignOut = require('./SignOut')
 class MyLocksContainer extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <LockDetails />
-        <SignOut navigator={this.props.navigator}/>
+      <View style={{flex: 11, backgroundColor: '#F1F5F6'}}>
+        <View style={styles.container}>
+          <LockDetails />
+        </View>
+          <SignOut navigator={this.props.navigator}/>
       </View>
-
     );
   }
 }
