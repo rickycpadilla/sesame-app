@@ -74,9 +74,16 @@ class LockDetails extends Component {
               />
             </View>
             <View style={styles.lockDetails}>
-              <Text>Home</Text>
-              <Text>Front Door</Text>
-              <Text>{this.state.locked ? 'Locked' : 'Unlocked'}</Text>
+              <Text style={{color: '#4A4A4A',}}>Home</Text>
+              <Text
+                style={{
+                  color: '#4A4A4A',
+                  fontWeight: 'bold',
+                  fontSize: 20
+                }}>Front Door</Text>
+              {this.state.locked ?
+                <Text style={{color: '#FF2D55'}}>Locked</Text>
+                  : <Text style={{color: '#4CD964'}}>Unlocked</Text>}
             </View>
           </TouchableOpacity>
       );

@@ -6,7 +6,8 @@ import {
   View,
   TouchableOpacity,
   AlertIOS,
-  NavigatorIOS
+  NavigatorIOS,
+  Image
 } from 'react-native';
 var styles = require('../config/styles');
 
@@ -28,15 +29,21 @@ class SignOut extends Component {
 
     return (
       <View>
-        <View style={styles.sigOutContainer}>
-          <TouchableOpacity
-            onPress={this.onSignOut}
-            >
-            <Text style={{color: '#8B999F', fontWeight: 'bold', letterSpacing: 1}}>
-              Sign out
-            </Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+          onPress={this.onSignOut}
+        >
+          <Image
+            source={require('../images/signout.png')}
+            style={{
+              width:25,
+              height:18,
+              marginTop: -30,
+              marginLeft: 20,
+              position: 'absolute',
+
+            }}
+          />
+        </TouchableOpacity>
       </View>
     );
   }

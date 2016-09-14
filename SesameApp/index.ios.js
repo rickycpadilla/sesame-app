@@ -32,11 +32,7 @@ class SesameApp extends Component {
       return (
         <NavigatorIOS
           style={styles.navigator}
-          // Comment out line below to show Nav Bar
           navigationBarHidden={true}
-          // DURING DEVELOPMENT - TO TEST ANOTHER SCENE, CHANGE THE COMPONENT BELOW
-          // TO THE ONE YOU WANT TO TEST (ie: component: HomeContainer)
-
           initialRoute={{component: OnboardingContainer, title: 'Sesame'}}/>
       );
 
@@ -44,14 +40,10 @@ class SesameApp extends Component {
       return (
         <NavigatorIOS
           style={styles.navigator}
-          // Comment out line below to show Nav Bar
           navigationBarHidden={true}
-          // DURING DEVELOPMENT - TO TEST ANOTHER SCENE, CHANGE THE COMPONENT BELOW
-          // TO THE ONE YOU WANT TO TEST (ie: component: HomeContainer)
           initialRoute={{component: OnboardingContainer, title: 'My Locks'}}/>
       );
     }
-
   }
 }
 

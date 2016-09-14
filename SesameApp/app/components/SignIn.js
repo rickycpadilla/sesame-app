@@ -10,13 +10,10 @@ import {
   Image,
   StatusBar
 } from 'react-native';
-
 var styles = require('../config/styles');
 var app = require('./Firebase');
 var Button = require('./button');
 var Signup = require('./SignUp');
-
-
 var LocksContainer = require('./MyLocksContainer');
 
 class SignIn extends Component {
@@ -28,7 +25,8 @@ class SignIn extends Component {
     this.state = {
       email: '',
       password: '',
-      errors:[]
+      errors:[],
+      navbarHide: true,
     }
   }
   onSignup() {
@@ -47,12 +45,11 @@ class SignIn extends Component {
         title: 'LocksContainer',
         component: LocksContainer,
       });
-      this.setState({"email": "", "password": ""});
+      this.setState({"email": "", "password": "", "navbarHide": false});
     }.bind(this)).catch(function(e){
         alert(e)
       });
        }
-
 
   render() {
     return (
@@ -84,12 +81,13 @@ class SignIn extends Component {
         </View>
         <View style={styles.underFormContainer}>
           <TouchableOpacity onPress={this.onSignup.bind(this)}>
-          <Text style={{color: '#8B999F', fontWeight: 'bold', letterSpacing: 1}}>Don't have an account?</Text>
-          </TouchableOpacity >
-        </View>
+            <Text style={{color: '#8B999F', fontWeight: 'bold', letterSpacing: 1}}>Don't have an account?</Text>
+            </TouchableOpacity >
+          </View>
 
-      </View>
+        </View>
       );
     }
   }
+
 module.exports = SignIn;

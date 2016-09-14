@@ -40,15 +40,15 @@ var styles = StyleSheet.create({
       backgroundColor: '#F1F5F6',
     },
 
-    sigOutContainer: {
+    addLock: {
       marginBottom: 20,
       flex: 1,
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#F1F5F6',
       alignSelf: 'center',
-      backgroundColor: '#F1F5F6',
+      color: '#8B999F',
+      fontWeight: 'bold',
+      fontSize: 17
     },
 
     buttonText: {
@@ -77,22 +77,25 @@ var styles = StyleSheet.create({
 
     lockContainer: {
         flexDirection: 'row',
-        marginTop: 60,
+        // marginTop: 10,
         // width: 100,
         padding: 10,
         backgroundColor: '#ffffff',
+        borderRadius: 10
     },
 
     lockedImageContainer: {
       backgroundColor: '#FF2D55',
       flex: 1,
-      alignItems: 'center'
+      alignItems: 'center',
+      borderRadius: 6
     },
 
     unlockedImageContainer: {
       backgroundColor: '#4CD964',
       flex: 1,
-      alignItems: 'center'
+      alignItems: 'center',
+      borderRadius: 6
     },
 
     lockImage: {
@@ -117,8 +120,26 @@ var styles = StyleSheet.create({
 
     lockDetails: {
       flex: 1,
-      marginLeft: 10,
-      marginTop: 15
+      marginLeft: 15,
+      marginTop: 12
+    },
+
+    navbar: {
+      backgroundColor: 'white',
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: 20,
+      borderBottomColor: '#CCD3D6',
+      borderBottomWidth: 1
+    },
+
+    navbarText: {
+      color: '#4A4A4A',
+      marginTop: 32,
+      fontSize: 18,
+      fontWeight: 'bold'
     },
 
     txt: {

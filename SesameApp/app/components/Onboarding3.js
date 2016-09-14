@@ -8,11 +8,7 @@ import {
 var screen = Dimensions.get('window');
 var SignIn = require('./SignIn')
 
-
-
 class Onboarding3 extends Component {
-
-
   render (){
     return (
       <View>

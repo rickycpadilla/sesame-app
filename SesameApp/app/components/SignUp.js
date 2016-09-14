@@ -9,7 +9,6 @@ import {
   View,
   Image
 } from 'react-native';
-
 var styles = require('../config/styles');
 var app = require('./Firebase');
 var Button = require('./button');
@@ -25,6 +24,7 @@ class SignUp extends Component {
       errors:[]
     }
   }
+
   SignIn(){
     this.props.navigator.pop()
   }
