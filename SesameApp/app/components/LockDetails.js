@@ -14,10 +14,7 @@ var app = require('./Firebase')
 
 import PasscodeAuth from 'react-native-passcode-auth';
 
-
 class LockDetails extends Component {
-
-
 
   constructor(props) {
     super(props);

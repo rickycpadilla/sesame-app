@@ -25,8 +25,6 @@ class OnboardingContainer extends Component {
   }
 
   onSignIn() {
-  console.log("~~~~~~~~~~~~~~~~~~~Æ~~~~~~~~~~~~~~~~~~~~~~~~~")
-  console.log(this.props);
   this.props.navigator.push({
     title: 'Sign In',
     component: SignIn
