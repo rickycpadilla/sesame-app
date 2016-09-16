@@ -36,9 +36,9 @@ class LockDetails extends Component {
     // To make this not throw errors, comment out the 2 snippets below
     // that are associated with touch ID
     // FROM HERE >>>>>>>
-    // PasscodeAuth.authenticate('to access your lock')
-    // .then(success => {
-    //   this.state.locked ?  AlertIOS.alert('Successfully Unlocked') : AlertIOS.alert('Successfully Locked')
+    PasscodeAuth.authenticate('to access your lock')
+    .then(success => {
+      this.state.locked ?  AlertIOS.alert('Successfully Unlocked') : AlertIOS.alert('Successfully Locked')
       // <<<<<<<< TO HERE
 
       this.setState({
@@ -50,10 +50,10 @@ class LockDetails extends Component {
       });
 
       // AND FROM HERE >>>>>>>
-    // })
-    // .catch(error => {
-    //   AlertIOS.alert('Authentication Failed');
-    // });
+    })
+    .catch(error => {
+      AlertIOS.alert('Authentication Failed');
+    });
     // <<<<<<< TO HERE
   }
 
