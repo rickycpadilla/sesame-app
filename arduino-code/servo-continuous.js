@@ -1,9 +1,10 @@
 var five = require("johnny-five");
 var board = new five.Board();
 var firebase = require('firebase');
+var APIKey = require('./.private');
 
 var firebaseConfig  = {
-    apiKey: "AIzaSyClCUfeUyDVEaRXJMAU96mLoDzG2r92Juo",
+    apiKey: APIKey,
     authDomain: "sesame-data.firebaseapp.com",
     databaseURL: "https://sesame-data.firebaseio.com",
     storageBucket: "sesame-data.appspot.com",
@@ -13,12 +14,6 @@ var app = firebase.initializeApp(firebaseConfig);
 
  board.on("ready", function() {
     var locked = app.database().ref('users/IS6ADlLjCWhGCnVW7JsFIlK439t1');
-  //   var users = app.database().ref('users');
-  //   users.on('value', function(snapshot) {
-  //    var uid = snapshot.val().uid;
-  //    locked = app.database().ref('users/' + uid)
-  //    console.log(snapshot.val());
-  //  });
 
    app.database().ref('users').on('value',function(snapshot){
      console.log(snapshot.key);
